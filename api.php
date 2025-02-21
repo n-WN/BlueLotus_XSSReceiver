@@ -7,7 +7,8 @@ header('Content-Type: application/json');
 
 $referer_array = parse_url($_SERVER['HTTP_REFERER']); 
 //CSRF防御
-if($referer_array['host'] != $_SERVER['HTTP_HOST']) { 
+# if($referer_array['host'] != $_SERVER['HTTP_HOST']) { 
+if($referer_array['host'] != preg_replace("/:\d+$/", '', $_SERVER['HTTP_HOST'])) { 
     exit('Access Denied'); 
 } 
 

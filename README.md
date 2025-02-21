@@ -1,4 +1,5 @@
 # XSS数据接收平台（无SQL版）
+
 如从旧版本升级，请务必先阅读Readme。同时，只是一个很久以前打CTF比赛练手的项目，现在回看起来很多地方写的都不优雅，不过难得的发现过了这么多年还能使用。本项目仅供学习交流使用，不得用于任何非法用途。
 
 ## 平台说明
@@ -8,7 +9,23 @@
 ![](./guide/mainpanel.png)
 
 ##安装说明
-###自动安装
+
+### Docker
+
+#### Build
+
+```shell
+docker build -t bluelotus_xssreceiver .
+```
+
+#### Run
+
+```shell
+docker run -d -p 8080:80 --name xssr bluelotus_xssreceiver
+```
+
+### 自动安装
+
 * 安装http server与php环境（ubuntu: sudo apt-get install apache2 php5 或 sudo apt-get install apache2 php7.4 libapache2-mod-php7.4）
 * 上传所有文件至空间根目录
 * 访问http://网站地址/
